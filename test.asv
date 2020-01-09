@@ -1,0 +1,20 @@
+%% Using CSF model
+% 1. Initialize CSFModelLum class 
+%       e.g. csfobj = CSFModelLum(logflag, parabola_mode);
+%     logflag:  true or false
+%               Contrast sensitivity in log or decimal scale
+%       parabola_mode:  3 (default), 4
+%                       Indicator if parabola function takes 3 or 4 parameters
+
+csfobj = CSFModelLum(true, 4);
+
+%% Input
+% Specifying mean background luminance levels
+
+lum = [0.1, 10, 1000]; 
+csfobj = csfobj.initParams(lum);
+
+%% Section 2 Title
+% Description of second code block
+
+S = csfobj.csf2(cc, ff, lum(ll));
